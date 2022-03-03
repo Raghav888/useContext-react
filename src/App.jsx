@@ -3,6 +3,7 @@ import { ProductListing } from "./ProductListing";
 import "./styles.css";
 import { Theme } from "./Theme";
 import { useTheme } from "./theme-context";
+import { getfontcolor } from "./getfontcolor";
 
 export default function App() {
   const { theme } = useTheme();
@@ -11,10 +12,7 @@ export default function App() {
       className="App"
       style={{ backgroundColor: theme === "white" ? "white" : "gray" }}
     >
-      <h1
-        className="app-header"
-        style={{ color: theme === "white" ? "black" : "white" }}
-      >
+      <h1 className="app-header" style={{ color: getfontcolor(theme) }}>
         eCommerce
       </h1>
       <div className="app-body">
